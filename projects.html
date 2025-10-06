@@ -16,8 +16,32 @@
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="hobbies.html" class="nav-link">Hobbies</a>
+                
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        About
+                        <i class="fas fa-chevron-down nav-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-link">My Story</a>
+                        <a href="about.html#skills" class="dropdown-link">Skills</a>
+                        <a href="about.html#experience" class="dropdown-link">Experience</a>
+                        <a href="about.html#education" class="dropdown-link">Education</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="hobbies.html" class="nav-link">
+                        Hobbies
+                        <i class="fas fa-chevron-down nav-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="hobbies.html#gaming" class="dropdown-link">Gaming</a>
+                        <a href="hobbies.html#sports" class="dropdown-link">Sports</a>
+                        <a href="hobbies.html#music" class="dropdown-link">Music</a>
+                    </div>
+                </div>
+                
                 <a href="projects.html" class="nav-link active">Projects</a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -36,8 +60,12 @@
             </div>
         </section>
 
-        <section class="projects-content">
+        <section class="projects-content" id="all">
             <div class="container">
+                <!-- Project Category Anchors -->
+                <div id="web" style="position: absolute; top: -80px;"></div>
+                <div id="mobile" style="position: absolute; top: -80px;"></div>
+                <div id="desktop" style="position: absolute; top: -80px;"></div>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
@@ -133,14 +161,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="project-cta">
-            <div class="container">
-                <h2>Interested in Working Together?</h2>
-                <p>I'm always excited to take on new challenges and collaborate on interesting projects.</p>
-                <a href="mailto:liyuchen990529@gmail.com" class="btn btn-primary">Get In Touch</a>
             </div>
         </section>
     </main>

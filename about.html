@@ -16,8 +16,32 @@
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link active">About</a>
-                <a href="hobbies.html" class="nav-link">Hobbies</a>
+                
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link active">
+                        About
+                        <i class="fas fa-chevron-down nav-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-link">My Story</a>
+                        <a href="about.html#skills" class="dropdown-link">Skills</a>
+                        <a href="about.html#experience" class="dropdown-link">Experience</a>
+                        <a href="about.html#education" class="dropdown-link">Education</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="hobbies.html" class="nav-link">
+                        Hobbies
+                        <i class="fas fa-chevron-down nav-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="hobbies.html#gaming" class="dropdown-link">Gaming</a>
+                        <a href="hobbies.html#sports" class="dropdown-link">Sports</a>
+                        <a href="hobbies.html#music" class="dropdown-link">Music</a>
+                    </div>
+                </div>
+                
                 <a href="projects.html" class="nav-link">Projects</a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -36,7 +60,7 @@
             </div>
         </section>
 
-        <section class="about-content">
+        <section class="about-content" id="story">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text">
@@ -71,7 +95,7 @@
             </div>
         </section>
 
-        <section class="skills">
+        <section class="skills" id="skills">
             <div class="container">
                 <h2>Skills & Technologies</h2>
                 <div class="skills-grid">
@@ -119,7 +143,7 @@
             </div>
         </section>
 
-        <section class="experience">
+        <section class="experience" id="experience">
             <div class="container">
                 <h2>Experience</h2>
                 <div class="timeline">
@@ -157,7 +181,7 @@
             </div>
         </section>
 
-        <section class="experience">
+        <section class="experience" id="education">
             <div class="container">
                 <h2>Education</h2>
                 <div class="timeline">

@@ -121,6 +121,7 @@ main {
 .nav-menu {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-link {
@@ -906,5 +907,141 @@ main {
     .hobbies-grid,
     .features-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Dropdown Navigation Styles */
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-menu .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.nav-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: var(--text-secondary);
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.nav-item:hover .nav-arrow {
+    transform: rotate(180deg);
+    color: var(--accent-primary);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    min-width: 200px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    padding: 8px 0;
+    backdrop-filter: blur(10px);
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-link {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-link:hover {
+    background: var(--bg-tertiary);
+    color: var(--accent-primary);
+    border-left-color: var(--accent-primary);
+    transform: translateX(5px);
+}
+
+.dropdown-link:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dropdown-link:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Mobile Navigation Updates for Dropdown */
+@media (max-width: 768px) {
+    .nav-item {
+        display: block;
+        width: 100%;
+    }
+    
+    .nav-link {
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 0;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: var(--bg-tertiary);
+        margin-top: 0;
+        border-radius: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .nav-item:hover .dropdown-menu,
+    .nav-item.active .dropdown-menu {
+        max-height: 300px;
+    }
+    
+    .dropdown-link {
+        padding: 10px 20px;
+        margin-left: 20px;
+        border-left: 2px solid var(--border-color);
+    }
+    
+    .dropdown-link:hover {
+        transform: none;
+        margin-left: 25px;
+    }
+    
+    .nav-menu.active .nav-item {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-menu.active .nav-item:last-child {
+        border-bottom: none;
     }
 }

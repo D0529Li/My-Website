@@ -16,8 +16,32 @@
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="hobbies.html" class="nav-link active">Hobbies</a>
+                
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        About
+                        <i class="fas fa-chevron-down nav-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-link">My Story</a>
+                        <a href="about.html#skills" class="dropdown-link">Skills</a>
+                        <a href="about.html#experience" class="dropdown-link">Experience</a>
+                        <a href="about.html#education" class="dropdown-link">Education</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="hobbies.html" class="nav-link active">
+                        Hobbies
+                        <i class="fas fa-chevron-down nav-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="hobbies.html#gaming" class="dropdown-link">Gaming</a>
+                        <a href="hobbies.html#sports" class="dropdown-link">Sports</a>
+                        <a href="hobbies.html#music" class="dropdown-link">Music</a>
+                    </div>
+                </div>
+                
                 <a href="projects.html" class="nav-link">Projects</a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -36,46 +60,10 @@
             </div>
         </section>
 
-        <section class="hobbies-content">
+        <section class="hobbies-content" id="gaming">
             <div class="container">
+                <h2>Gaming</h2>
                 <div class="hobbies-grid">
-                    <div class="hobby-card">
-                        <div class="hobby-icon">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <h3>Photography</h3>
-                        <p>
-                            Capturing moments and exploring the world through my lens. I love landscape 
-                            photography and street photography, always looking for that perfect shot 
-                            that tells a story.
-                        </p>
-                        <div class="hobby-gallery">
-                            <div class="gallery-placeholder">
-                                <i class="fas fa-images"></i>
-                                <p>Add your photos here</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hobby-card">
-                        <div class="hobby-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h3>Reading</h3>
-                        <p>
-                            An avid reader with a passion for both fiction and non-fiction. I particularly 
-                            enjoy science fiction, biographies, and books about technology and personal 
-                            development.
-                        </p>
-                        <div class="book-list">
-                            <h4>Currently Reading:</h4>
-                            <ul>
-                                <li>"Book Title" by Author Name</li>
-                                <li>"Another Book" by Author Name</li>
-                            </ul>
-                        </div>
-                    </div>
-
                     <div class="hobby-card">
                         <div class="hobby-icon">
                             <i class="fas fa-gamepad"></i>
@@ -96,7 +84,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="hobbies-content" id="sports">
+            <div class="container">
+                <div class="hobbies-grid">
                     <div class="hobby-card">
                         <div class="hobby-icon">
                             <i class="fas fa-dumbbell"></i>
@@ -117,7 +111,13 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="hobbies-content" id="music">
+            <div class="container">
+                <div class="hobbies-grid">
                     <div class="hobby-card">
                         <div class="hobby-icon">
                             <i class="fas fa-music"></i>
@@ -138,37 +138,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="hobby-card">
-                        <div class="hobby-icon">
-                            <i class="fas fa-plane"></i>
-                        </div>
-                        <h3>Travel</h3>
-                        <p>
-                            Exploring new places and experiencing different cultures is something I'm 
-                            passionate about. Each trip teaches me something new and gives me fresh 
-                            perspectives on life and work.
-                        </p>
-                        <div class="travel-list">
-                            <h4>Places I'd Love to Visit:</h4>
-                            <ul>
-                                <li>Japan</li>
-                                <li>Iceland</li>
-                                <li>New Zealand</li>
-                                <li>Norway</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="hobby-quote">
-            <div class="container">
-                <blockquote>
-                    "The best way to make your dreams come true is to wake up and pursue your passions."
-                    <cite>- Yuchen (David) Li</cite>
-                </blockquote>
             </div>
         </section>
     </main>

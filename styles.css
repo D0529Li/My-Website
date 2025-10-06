@@ -137,6 +137,10 @@ main {
     color: var(--accent-primary);
 }
 
+.nav-link.active .nav-arrow {
+    color: var(--accent-primary);
+}
+
 .nav-link.active::after {
     content: '';
     position: absolute;

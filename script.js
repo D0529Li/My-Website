@@ -271,3 +271,60 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('dark-theme');
     }
 });
+
+// Media toggle functionality for hobbies (images)
+function toggleMedia(mediaId) {
+    const mediaContent = document.getElementById(mediaId);
+    const toggleBtn = document.querySelector(`button[onclick="toggleMedia('${mediaId}')"]`);
+    const arrow = toggleBtn.querySelector('.toggle-arrow');
+    const span = toggleBtn.querySelector('span');
+    
+    if (mediaContent.style.display === 'none' || mediaContent.style.display === '') {
+        mediaContent.style.display = 'block';
+        arrow.style.transform = 'rotate(180deg)';
+        span.textContent = 'Hide Images';
+        
+        // Add smooth reveal animation
+        mediaContent.style.opacity = '0';
+        mediaContent.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+            mediaContent.style.opacity = '1';
+            mediaContent.style.transform = 'translateY(0)';
+        }, 10);
+    } else {
+        mediaContent.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+        span.textContent = 'View Gaming Images';
+    }
+}
+
+// Video toggle functionality for hobbies
+function toggleVideos(videoId) {
+    const videoContent = document.getElementById(videoId);
+    const toggleBtn = document.querySelector(`button[onclick="toggleVideos('${videoId}')"]`);
+    const arrow = toggleBtn.querySelector('.toggle-arrow');
+    const span = toggleBtn.querySelector('span');
+    
+    if (videoContent.style.display === 'none' || videoContent.style.display === '') {
+        videoContent.style.display = 'block';
+        arrow.style.transform = 'rotate(180deg)';
+        span.textContent = 'Hide Videos';
+        
+        // Add smooth reveal animation
+        videoContent.style.opacity = '0';
+        videoContent.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+            videoContent.style.opacity = '1';
+            videoContent.style.transform = 'translateY(0)';
+        }, 10);
+    } else {
+        videoContent.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+        span.textContent = 'View Gaming Videos';
+        
+        // Pause all videos when hiding
+        videoContent.querySelectorAll('video').forEach(video => {
+            video.pause();
+        });
+    }
+}

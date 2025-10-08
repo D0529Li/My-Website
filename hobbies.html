@@ -74,6 +74,7 @@
                             </a>
                         </div>
                         <h3>Gaming</h3>
+                        
                         <p>
                             Gaming has been part of my life since I was a kid. I've been playing League of Legends for over 10 years now, starting as a casual player and eventually competing semi-professionally for my University of Waterloo team and other amateur organizations.
                         </p>
@@ -86,6 +87,42 @@
                         <p>
                             Gaming will always be part of my life - it's one of my favorite ways to unwind, challenge myself, and connect with people. Whether I'm strategizing in a ranked match or exploring a new RPG world, there's always something exciting waiting to be discovered.
                         </p>
+                        
+                        <!-- Gaming Images with Expander -->
+                        <div class="hobby-media-section">
+                            <button class="media-toggle-btn" onclick="toggleMedia('gaming-images')">
+                                <i class="fas fa-images"></i>
+                                <span>View Gaming Images</span>
+                                <i class="fas fa-chevron-down toggle-arrow"></i>
+                            </button>
+                            <div class="media-content" id="gaming-images" style="display: none;">
+                                <div class="hobby-images">
+                                    <img src="images/gaming/clol-jersey-1.jpg" alt="CLoL Jersey 1" class="hobby-image">
+                                    <img src="images/gaming/lol-screenshot.jpg" alt="League of Legends Screenshot" class="hobby-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Section with Expander -->
+                        <div class="hobby-videos">
+                            <button class="video-toggle-btn" onclick="toggleVideos('gaming-videos')">
+                                <i class="fas fa-play"></i>
+                                <span>View Gaming Videos</span>
+                                <i class="fas fa-chevron-down toggle-arrow"></i>
+                            </button>
+                            <div class="video-content" id="gaming-videos" style="display: none;">
+                                <div class="video-grid">
+                                    <video controls class="hobby-video">
+                                        <source src="videos/gaming/lol-highlight.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <video controls class="hobby-video">
+                                        <source src="videos/gaming/gaming-montage.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div class="gaming-stats">
                             <h4>Favorite Genres:</h4>
                             <div class="genre-tags">

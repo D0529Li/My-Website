@@ -245,6 +245,37 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 });
 
+// Back to Top functionality
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/hide back to top button based on scroll position
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopSection = document.querySelector('.back-to-top-section');
+    const backToTopBtn = document.querySelector('.back-to-top-btn');
+    
+    if (backToTopBtn) {
+        // Initially hide the button if at top of page
+        if (window.scrollY < 300) {
+            backToTopSection.style.opacity = '0.7';
+        }
+        
+        window.addEventListener('scroll', debounce(function() {
+            if (window.scrollY > 300) {
+                backToTopSection.style.opacity = '1';
+                backToTopBtn.style.transform = 'scale(1)';
+            } else {
+                backToTopSection.style.opacity = '0.7';
+                backToTopBtn.style.transform = 'scale(0.9)';
+            }
+        }, 100));
+    }
+});
+
 // Utility function to debounce scroll events
 function debounce(func, wait) {
     let timeout;

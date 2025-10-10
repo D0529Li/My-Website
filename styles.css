@@ -171,6 +171,7 @@ main {
     gap: 0.75rem;
     align-items: center;
     margin-left: 2rem;
+    z-index: 1001; /* Ensure social links are above other elements */
 }
 
 .nav-container .social-link {
@@ -181,10 +182,13 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 0.9rem;
+    position: relative;
+    z-index: 1002;
+    pointer-events: auto; /* Ensure links are clickable */
 }
 
 .nav-container .social-link:hover {
@@ -356,7 +360,7 @@ main {
 
 /* Page Header */
 .page-header {
-    padding: 120px 0 60px;
+    padding: 85px 0 55px;
     text-align: center;
     background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     color: white;
@@ -365,13 +369,47 @@ main {
 
 .page-header h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 5px;
     font-weight: 700;
 }
 
 .page-header p {
     font-size: 1.2rem;
     opacity: 0.9;
+}
+
+.page-header-content {
+    position: relative;
+    text-align: center;
+}
+
+.page-header-actions {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.page-header-actions .btn {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.page-header-actions .btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .page-header-actions {
+        position: static;
+        transform: none;
+        margin-top: 1.5rem;
+    }
 }
 
 /* About Page Styles */
@@ -479,7 +517,7 @@ main {
 
 /* Experience Section */
 .experience {
-    padding: 80px 0;
+    padding: 10px 0;
 }
 
 .experience h2 {
@@ -876,7 +914,13 @@ main {
     }
 
     .nav-container .social-links {
-        display: none;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-top: 1px solid var(--border-color);
+        margin-top: 1rem;
+        order: 10; /* Place at bottom of mobile menu */
     }
 
     .hero {

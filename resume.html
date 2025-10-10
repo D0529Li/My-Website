@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuchen (David) Li - Portfolio</title>
+    <title>Resume - Yuchen (David) Li</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,8 +15,8 @@
                 <a href="index.html">Yuchen (David) Li</a>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="resume.html" class="nav-link">Resume</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="resume.html" class="nav-link active">Resume</a>
                 
                 <div class="nav-item">
                     <a href="about.html" class="nav-link">
@@ -61,36 +61,52 @@
     </nav>
 
     <main>
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Hello, I'm <span class="highlight">Yuchen (David) Li</span> </h1>
-                <p class="hero-subtitle">A passionate developer creating amazing digital experiences</p>
-                <p class="hero-description">
-                    Welcome to my portfolio! I'm a creative professional who loves to build 
-                    innovative solutions and bring ideas to life through code.
-                </p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn btn-primary">View My Work</a>
-                    <a href="about.html" class="btn btn-secondary">About Me</a>
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <div class="page-header-text">
+                        <h1>Resume</h1>
+                        <p>My professional resume</p>
+                    </div>
+                    <div class="page-header-actions">
+                        <a href="assets/resume.pdf" download="Yuchen_David_Li_Resume.pdf" class="btn btn-primary resume-download-btn">
+                            <i class="fas fa-download"></i>
+                            Download My Resume
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-user-circle"></i>
+        </section>
+
+        <section class="resume-content">
+            <div class="container">
+                <div class="pdf-viewer-container">                    
+                    <iframe 
+                        id="resume-pdf-viewer"
+                        src="assets/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                        type="application/pdf"
+                        width="100%" 
+                        height="1480px"
+                        style="border: 1px solid #333; border-radius: 8px; background: #1a1a1a;"
+                        title="Resume PDF Viewer">
+                        <p>Your browser does not support PDF viewing. <a href="assets/resume.pdf" download>Download the PDF</a> instead.</p>
+                    </iframe>
                 </div>
             </div>
         </section>
     </main>
 
-    <div class="back-to-top-section" id="contact">
-        <div class="container">
-            <button class="back-to-top-btn" onclick="scrollToTop()">
-                <i class="fas fa-chevron-up"></i>
-                <span>Back to Top</span>
-            </button>
-        </div>
-    </div>
-
     <script src="script.js"></script>
+    <script>
+        // Simple fallback for browsers that don't support PDF viewing
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfViewer = document.getElementById('resume-pdf-viewer');
+            const downloadBtn = document.querySelector('.resume-download-btn');
+            
+            pdfViewer.onerror = function() {
+                alert('Your browser may not support PDF viewing. Please use the download button to view the resume.');
+            };
+        });
+    </script>
 </body>
 </html>

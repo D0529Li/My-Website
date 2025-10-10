@@ -675,6 +675,173 @@ main {
     gap: 0.5rem;
 }
 
+/* Inline music tags next to title */
+.hobby-title-with-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hobby-title-with-tags h3 {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.hobby-title-with-tags h3::after {
+    content: '';
+    position: absolute;
+    right: -0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--accent-primary);
+    border-radius: 1px;
+    opacity: 0.4;
+}
+
+.inline-music-tags,
+.inline-gaming-tags,
+.inline-sports-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.inline-music-tags .music-tag {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 16px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.inline-music-tags .music-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.inline-music-tags .music-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    scale: 1.05;
+}
+
+.inline-music-tags .music-tag:hover::before {
+    left: 100%;
+}
+
+/* Gaming tags - Purple gradient */
+.inline-gaming-tags .gaming-tag {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 16px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.inline-gaming-tags .gaming-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.inline-gaming-tags .gaming-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    scale: 1.05;
+}
+
+.inline-gaming-tags .gaming-tag:hover::before {
+    left: 100%;
+}
+
+/* Sports tags - Purple gradient */
+.inline-sports-tags .sports-tag {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 16px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.inline-sports-tags .sports-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.inline-sports-tags .sports-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    scale: 1.05;
+}
+
+.inline-sports-tags .sports-tag:hover::before {
+    left: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hobby-title-with-tags {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .hobby-title-with-tags h3::after {
+        display: none;
+    }
+    
+    .inline-music-tags {
+        width: 100%;
+    }
+}
+
 .genre-tag,
 .music-tag {
     background: var(--bg-tertiary);

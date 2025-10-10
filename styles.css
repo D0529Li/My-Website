@@ -289,6 +289,20 @@ main {
     margin-left: 2rem;
 }
 
+.hero-image .profile-photo {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image .profile-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-heavy);
+}
+
 .image-placeholder {
     width: 300px;
     height: 300px;

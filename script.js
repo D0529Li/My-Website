@@ -359,3 +359,28 @@ function toggleVideos(videoId) {
         });
     }
 }
+
+// Accordion functionality for hobbies page
+function toggleAccordion(accordionId) {
+    const accordionItem = document.getElementById(accordionId);
+    const accordionHeader = accordionItem.querySelector('.accordion-header');
+    const accordionContent = accordionItem.querySelector('.accordion-content');
+    
+    // Check if this accordion is currently active
+    const isCurrentlyActive = accordionHeader.classList.contains('active');
+    
+    // Close all accordion items
+    document.querySelectorAll('.accordion-item').forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        
+        header.classList.remove('active');
+        content.classList.remove('active');
+    });
+    
+    // If the clicked accordion wasn't active, open it
+    if (!isCurrentlyActive) {
+        accordionHeader.classList.add('active');
+        accordionContent.classList.add('active');
+    }
+}

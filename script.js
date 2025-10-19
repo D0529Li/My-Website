@@ -336,10 +336,23 @@ function toggleVideos(videoId) {
     const arrow = toggleBtn.querySelector('.toggle-arrow');
     const span = toggleBtn.querySelector('span');
     
+    // Determine section type and set button text
+    const isGamingSection = videoId === 'gaming-videos';
+    const isOverwatchSection = videoId === 'overwatch-videos';
+    const hideText = isGamingSection ? 'Hide League of Legends Highlights' : isOverwatchSection ? 'Hide Overwatch Highlights' : 'Hide League of Legends Highlights';
+    const showText = isGamingSection ? 'View League of Legends Highlights' : isOverwatchSection ? 'View Overwatch Highlights' : 'View League of Legends Highlights';
+    
     if (videoContent.style.display === 'none' || videoContent.style.display === '') {
         videoContent.style.display = 'block';
         arrow.style.transform = 'rotate(180deg)';
-        span.textContent = 'Hide Videos';
+        span.textContent = hideText;
+        
+        // Reset video visibility for progressive loading based on section
+        if (isGamingSection) {
+            resetVideoVisibility('gaming');
+        } else if (isOverwatchSection) {
+            resetVideoVisibility('overwatch');
+        }
         
         // Add smooth reveal animation
         videoContent.style.opacity = '0';
@@ -351,7 +364,7 @@ function toggleVideos(videoId) {
     } else {
         videoContent.style.display = 'none';
         arrow.style.transform = 'rotate(0deg)';
-        span.textContent = 'View Gaming Videos';
+        span.textContent = showText;
         
         // Pause all videos when hiding
         videoContent.querySelectorAll('video').forEach(video => {
@@ -383,4 +396,83 @@ function toggleAccordion(accordionId) {
         accordionHeader.classList.add('active');
         accordionContent.classList.add('active');
     }
+}
+
+// Progressive video loading functionality
+const videoSectionState = {
+    'gaming': { currentlyShown: 2, total: 4 },
+    'overwatch': { currentlyShown: 2, total: 4 }
+};
+const videosPerLoad = 2; // Show 2 more videos each time
+
+function showMoreVideos(sectionId = 'gaming') {
+    const sectionPrefix = sectionId === 'gaming' ? '' : `${sectionId}-`;
+    const videoContentId = sectionId === 'gaming' ? 'gaming-videos' : `${sectionId}-videos`;
+    const viewMoreBtnId = sectionId === 'gaming' ? 'view-more-btn' : `${sectionId}-view-more-btn`;
+    
+    const videoContent = document.getElementById(videoContentId);
+    const hiddenVideos = videoContent.querySelectorAll('.hidden-video[style*="display: none"]');
+    const viewMoreBtn = document.getElementById(viewMoreBtnId);
+    const videoCount = viewMoreBtn.querySelector('.video-count');
+    
+    // Show the next batch of videos (up to videosPerLoad)
+    let videosToShow = Math.min(videosPerLoad, hiddenVideos.length);
+    
+    for (let i = 0; i < videosToShow; i++) {
+        const video = hiddenVideos[i];
+        video.style.display = 'block';
+        
+        // Add smooth reveal animation
+        video.style.opacity = '0';
+        video.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            video.style.opacity = '1';
+            video.style.transform = 'translateY(0)';
+        }, i * 100 + 50); // Stagger the animations
+    }
+    
+    videoSectionState[sectionId].currentlyShown += videosToShow;
+    const remainingVideos = videoSectionState[sectionId].total - videoSectionState[sectionId].currentlyShown;
+    
+    // Update button text and hide if no more videos
+    if (remainingVideos > 0) {
+        videoCount.textContent = `(${remainingVideos} more)`;
+    } else {
+        // Hide the button when all videos are shown
+        viewMoreBtn.style.opacity = '0';
+        viewMoreBtn.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            viewMoreBtn.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Reset video visibility when videos are toggled
+function resetVideoVisibility(sectionId = 'gaming') {
+    const sectionPrefix = sectionId === 'gaming' ? '' : `${sectionId}-`;
+    const videoContentId = sectionId === 'gaming' ? 'gaming-videos' : `${sectionId}-videos`;
+    const viewMoreBtnId = sectionId === 'gaming' ? 'view-more-btn' : `${sectionId}-view-more-btn`;
+    
+    const videoContent = document.getElementById(videoContentId);
+    const hiddenVideos = videoContent.querySelectorAll('.hidden-video');
+    const viewMoreBtn = document.getElementById(viewMoreBtnId);
+    const videoCount = viewMoreBtn.querySelector('.video-count');
+    
+    // Hide all videos beyond the first 2
+    hiddenVideos.forEach(video => {
+        video.style.display = 'none';
+        video.style.opacity = '1';
+        video.style.transform = 'translateY(0)';
+    });
+    
+    // Reset button state
+    videoSectionState[sectionId].currentlyShown = 2;
+    const remainingVideos = videoSectionState[sectionId].total - videoSectionState[sectionId].currentlyShown;
+    videoCount.textContent = `(${remainingVideos} more)`;
+    
+    // Show the button again
+    viewMoreBtn.style.display = 'block';
+    viewMoreBtn.style.opacity = '1';
+    viewMoreBtn.style.transform = 'scale(1)';
 }

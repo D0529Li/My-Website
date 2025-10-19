@@ -91,25 +91,19 @@
                     </button>
                     <div class="accordion-content">
                         <div class="hobby-card">
-                            <div class="gaming-links">
-                                <a href="https://lol.fandom.com/wiki/LastDanceDF" target="_blank" rel="noopener noreferrer" class="gaming-link" title="View my League of Legends competitive history">
-                                    <i class="fas fa-trophy"></i>
-                                    <span>My LoL Wiki Page</span>
-                                </a>
-                            </div>
-                            
                             <p>
                                 Gaming has been part of my life since I was a kid. I've been playing League of Legends for over 10 years now, starting as a casual player and eventually competing semi-professionally for my University of Waterloo team and other amateur organizations.
                             </p>
                             <p>
                                 My competitive peak came in 2023 with some solid achievements: 1st place in East Conference, top 16 in College LoL Championship, and top 12 in the NACL Qualifier (tier 3 tournament of NA). After retiring from competitive LoL that year, I shifted back to playing casually with friends while still loving the strategic depth of the game.
                             </p>
-                            <p>
-                                Outside of League, I'm big on FPS games and single-player RPGs. I've put way too many hours into Overwatch, PUBG, Rainbow Six Siege, APEX Legends, and Destiny 2. My competitive drive has chilled out since retiring from competitive LoL, but I still get excited about discovering great new games.
-                            </p>
-                            <p>
-                                Gaming will always be part of my life - it's one of my favorite ways to unwind, challenge myself, and connect with people. Whether I'm strategizing in a ranked match or exploring a new RPG world, there's always something exciting waiting to be discovered.
-                            </p>
+                            
+                            <div class="gaming-links">
+                                <a href="https://lol.fandom.com/wiki/LastDanceDF" target="_blank" rel="noopener noreferrer" class="gaming-link" title="View my League of Legends competitive history">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>My LoL Wiki Page</span>
+                                </a>
+                            </div>
                             
                             <!-- Gaming Images with Expander -->
                             <div class="hobby-media-section">
@@ -120,8 +114,14 @@
                                 </button>
                                 <div class="media-content" id="gaming-images" style="display: none;">
                                     <div class="hobby-images">
-                                        <img src="images/gaming/clol-jersey-1.jpg" alt="CLoL Jersey 1" class="hobby-image">
-                                        <img src="images/gaming/lol-screenshot.jpg" alt="League of Legends Screenshot" class="hobby-image">
+                                        <div class="media-item">
+                                            <img src="images/gaming/clol-jersey-1.jpg" alt="CLoL Jersey 1" class="hobby-image">
+                                            <div class="media-caption">University of Waterloo CLoL Team Jersey</div>
+                                        </div>
+                                        <div class="media-item">
+                                            <img src="images/gaming/Competitive History.png" alt="League of Legends Screenshot" class="hobby-image">
+                                            <div class="media-caption">Competitive League of Legends History</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -130,22 +130,116 @@
                             <div class="hobby-videos">
                                 <button class="video-toggle-btn" onclick="toggleVideos('gaming-videos')">
                                     <i class="fas fa-play"></i>
-                                    <span>View Gaming Videos</span>
+                                    <span>View League of Legends Highlights</span>
                                     <i class="fas fa-chevron-down toggle-arrow"></i>
                                 </button>
                                 <div class="video-content" id="gaming-videos" style="display: none;">
-                                    <div class="video-grid">
-                                        <video controls class="hobby-video">
-                                            <source src="videos/gaming/lol-highlight.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        <video controls class="hobby-video">
-                                            <source src="videos/gaming/gaming-montage.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                    <div class="video-grid" id="video-grid">
+                                        <!-- Initially visible videos (first 2) -->
+                                        <div class="media-item video-item" data-video-index="1">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/gaming/lol-highlight.mov" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">My first and only Pentakill in Competitive LoL - Lucian</div>
+                                        </div>
+                                        <div class="media-item video-item" data-video-index="2">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/gaming/lol-highlight (1).mov" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">LoL Highlight - Jinx</div>
+                                        </div>
+                                        
+                                        <!-- Hidden videos (will be shown progressively) -->
+                                        <div class="media-item video-item hidden-video" data-video-index="3" style="display: none;">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/gaming/lol-highlight (2).mov" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">LoL Highlight - Kai'Sa</div>
+                                        </div>
+                                        <div class="media-item video-item hidden-video" data-video-index="4" style="display: none;">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/gaming/lol-highlight (3).mov" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">LoL Highlight - Kalista</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- View More Button -->
+                                    <div class="video-actions">
+                                        <button class="view-more-btn" id="view-more-btn" onclick="showMoreVideos()">
+                                            <i class="fas fa-plus"></i>
+                                            <span>View More Videos</span>
+                                            <span class="video-count">(2 more)</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <p>
+                                Outside of League, I'm big on FPS games and single-player RPGs. I've put way too many hours into Overwatch, PUBG, Rainbow Six Siege, APEX Legends, and Destiny 2. My competitive drive has chilled out since retiring from competitive LoL, but I still get excited about discovering great new games.
+                            </p>
+                            
+                            <!-- Overwatch Video Section with Expander -->
+                            <div class="hobby-videos">
+                                <button class="video-toggle-btn" onclick="toggleVideos('overwatch-videos')">
+                                    <i class="fas fa-play"></i>
+                                    <span>View Overwatch Highlights</span>
+                                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                                </button>
+                                <div class="video-content" id="overwatch-videos" style="display: none;">
+                                    <div class="video-grid" id="overwatch-video-grid">
+                                        <!-- Initially visible videos (first 2) -->
+                                        <div class="media-item video-item" data-video-index="1">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/overwatch/overwatch-highlight (1).mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">Overwatch Highlight - Genji (1)</div>
+                                        </div>
+                                        <div class="media-item video-item" data-video-index="2">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/overwatch/overwatch-highlight (2).mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">Overwatch Highlight - Genji (2)</div>
+                                        </div>
+                                        
+                                        <!-- Hidden videos (will be shown progressively) -->
+                                        <div class="media-item video-item hidden-video" data-video-index="3" style="display: none;">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/overwatch/overwatch-highlight (3).mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">Overwatch Highlight - Genji (3)</div>
+                                        </div>
+                                        <div class="media-item video-item hidden-video" data-video-index="4" style="display: none;">
+                                            <video controls class="hobby-video">
+                                                <source src="videos/overwatch/overwatch-highlight (4).mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="media-caption">Overwatch Highlight - Genji (4)</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- View More Button -->
+                                    <div class="video-actions">
+                                        <button class="view-more-btn" id="overwatch-view-more-btn" onclick="showMoreVideos('overwatch')">
+                                            <i class="fas fa-plus"></i>
+                                            <span>View More Videos</span>
+                                            <span class="video-count">(2 more)</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <p>
+                                Gaming will always be part of my life - it's one of my favorite ways to unwind, challenge myself, and connect with people. Whether I'm strategizing in a ranked match or exploring a new RPG world, there's always something exciting waiting to be discovered.
+                            </p>
                         </div>
                     </div>
                 </div>

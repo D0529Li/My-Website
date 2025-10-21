@@ -605,6 +605,77 @@ main {
     }
 }
 
+/* View Toggle Styles */
+.view-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 4px;
+    gap: 2px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 46px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.toggle-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--accent-primary);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.toggle-btn i {
+    font-size: 0.9rem;
+}
+
+/* View Content Styles */
+.view-content {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .view-toggle {
+        order: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .toggle-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
 /* About Page Styles */
 .about-content {
     padding: 80px 0;

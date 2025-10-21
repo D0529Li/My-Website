@@ -16,7 +16,6 @@
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="resume.html" class="nav-link">Resume</a>
                 
                 <div class="nav-item">
                     <a href="about.html" class="nav-link active">
@@ -24,7 +23,7 @@
                         <i class="fas fa-chevron-down nav-arrow"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="about.html#story" class="dropdown-link">My Story</a>
+                        <a href="about.html#skills" class="dropdown-link">Skills</a>
                         <a href="about.html#experience" class="dropdown-link">Experience</a>
                         <a href="about.html#education" class="dropdown-link">Education</a>
                     </div>
@@ -62,46 +61,128 @@
     <main>
         <section class="page-header">
             <div class="container">
-                <h1>About Me</h1>
-                <p>Get to know more about my background, skills, and journey</p>
-            </div>
-        </section>
-
-        <section class="about-content" id="story">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h2>My Story</h2>
-                        <p>
-                            Hello! I'm Yuchen (David) Li, a Full Stack Software Developer with a Bachelor of Computer Science 
-                            from the University of Waterloo. With 3+ years of professional experience at PINpoint Information Systems, 
-                            I've grown from handling smaller tasks under senior guidance to independently owning major feature requests 
-                            and driving significant performance improvements.
-                        </p>
-                        <p>
-                            My journey in software development has been one of continuous growth and learning. I'm passionate about creating 
-                            scalable and user-focused software solutions spanning <strong>desktop applications</strong>, <strong>web applications</strong>, 
-                            <strong>web APIs</strong>, and <strong>database systems</strong>. I particularly enjoy full-stack development, 
-                            performance optimization, and mentoring fellow developers.
-                        </p>
-                        <p>
-                            Over the years, I've cultivated strong communication skills and thrive in collaborative environments. 
-                            I consistently share insights with my team and actively seek input from others to leverage collective knowledge. 
-                            Working at a company that manages multiple release versions has honed my ability to prioritize tasks effectively 
-                            and adapt to shifting demands in dynamic, fast-paced settings.
-                        </p>
-                        <!-- <p>
-                            I'm currently in the process of obtaining Canadian permanent residency and am excited about opportunities to 
-                            collaborate with talented teams and contribute to projects where I can continue to learn, innovate, and create 
-                            meaningful impact. Feel free to reach out!
-                        </p> -->
+                <div class="page-header-content">
+                    <div class="view-toggle">
+                        <button id="webViewBtn" class="toggle-btn active" onclick="switchView('web')">
+                            <i class="fas fa-user"></i>
+                            Web View
+                        </button>
+                        <button id="pdfViewBtn" class="toggle-btn" onclick="switchView('pdf')">
+                            <i class="fas fa-file-pdf"></i>
+                            PDF View
+                        </button>
                     </div>
-                    <div class="about-image">
-                        <img src="images/profile-photo-2.jpg" alt="Yuchen (David) Li - Profile Photo" class="profile-photo">
+                    <div class="page-header-text">
+                        <h1>About Me</h1>
+                        <p>Get to know more about my background, skills, and journey</p>
+                    </div>
+                    <div class="page-header-actions">
+                        <a href="assets/resume.pdf" download="Yuchen_David_Li_Resume.pdf" class="btn resume-download-btn">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Web View Content -->
+        <div id="webView" class="view-content">
+            <section class="resume-summary">
+                <div class="container">
+                    <h2>Key Achievements</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-item">
+                            <div class="achievement-number">3+</div>
+                            <div class="achievement-text">Years Full-Stack Development</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">10×</div>
+                            <div class="achievement-text">Database Performance Improvement</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">90%</div>
+                            <div class="achievement-text">Reduced Test Execution Time</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number"><i class="fas fa-users"></i></div>
+                            <div class="achievement-text">Scrum Master & Code Mentor</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">UW</div>
+                            <div class="achievement-text">Computer Science Graduate with Distinction</div>
+                        </div>
+                    </div>
+                    <div class="resume-highlights">
+                        <h3>Professional Summary</h3>
+                        <p>
+                            <strong>Full Stack Software Engineer</strong> and <strong>Scrum Master</strong> with expertise in <strong>C#/.NET</strong> and <strong>Angular</strong>. 
+                            Proven track record of delivering scalable <strong>desktop applications</strong>, <strong>web applications</strong>, 
+                            <strong>web APIs</strong>, and <strong>database solutions</strong>. Currently serving as <strong>Scrum Master</strong> for my development team, 
+                            while specializing in performance optimization, automated testing, and mentoring team members across enterprise-level projects.
+                        </p>
+                    </div>
+                    
+                    <div class="skills" id="skills">
+                        <h3>Skills & Technologies</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Core Technologies</h4>
+                                <div class="expertise-note">(3+ years professional experience)</div>
+                                <div class="skill-tags">
+                                    <span class="skill-tag expert">C#<small>(Expert)</small></span>
+                                    <span class="skill-tag expert">.NET Core<small>(Expert)</small></span>
+                                    <span class="skill-tag expert">WPF<small>(Expert)</small></span>
+                                    <span class="skill-tag proficient">Angular<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">JavaScript<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">ASP.NET Web API<small>(Proficient)</small></span>
+                                    <span class="skill-tag intermediate">C++<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Java<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">HTML/CSS<small>(Intermediate)</small></span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Database Technologies</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag proficient">SQL<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">SQL Server<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">SQL Server Profiler<small>(Proficient)</small></span>
+                                    <span class="skill-tag intermediate">SSMS<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">SSAS<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Database Performance Optimization<small>(Intermediate)</small></span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Development & Testing</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag expert">Visual Studio<small>(Expert)</small></span>
+                                    <span class="skill-tag proficient">Git<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">Microsoft Azure<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">Unit Testing<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">Integration Testing<small>(Proficient)</small></span>
+                                    <span class="skill-tag intermediate">Automated Testing<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Test-Driven Development<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Postman<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Jira<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Linux<small>(Intermediate)</small></span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Leadership & Additional Technologies</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag proficient">Scrum Master<small>(Current Role)</small></span>
+                                    <span class="skill-tag proficient">Code Mentoring<small>(Proficient)</small></span>
+                                    <span class="skill-tag proficient">Cross-team Collaboration<small>(Proficient)</small></span>
+                                    <span class="skill-tag intermediate">Agile Development<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Performance Optimization<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Technical Documentation<small>(Intermediate)</small></span>
+                                    <span class="skill-tag intermediate">Appium Windows Driver<small>(Intermediate)</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
         <section class="experience" id="experience">
@@ -159,6 +240,27 @@
                 </div>
             </div>
         </section>
+        </div>
+
+        <!-- PDF View Content -->
+        <div id="pdfView" class="view-content" style="display: none;">
+            <section class="resume-content">
+                <div class="container">
+                    <div class="pdf-viewer-container">                    
+                        <iframe 
+                            id="resume-pdf-viewer"
+                            src="assets/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="1480px"
+                            style="border: 1px solid #333; border-radius: 8px; background: #1a1a1a;"
+                            title="Resume PDF Viewer">
+                            <p>Your browser does not support PDF viewing. <a href="assets/resume.pdf" download>Download the PDF</a> instead.</p>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <div class="back-to-top-section">
@@ -171,5 +273,37 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Function to switch between Web View and PDF View
+        function switchView(viewType) {
+            const webView = document.getElementById('webView');
+            const pdfView = document.getElementById('pdfView');
+            const webViewBtn = document.getElementById('webViewBtn');
+            const pdfViewBtn = document.getElementById('pdfViewBtn');
+
+            if (viewType === 'web') {
+                webView.style.display = 'block';
+                pdfView.style.display = 'none';
+                webViewBtn.classList.add('active');
+                pdfViewBtn.classList.remove('active');
+            } else {
+                webView.style.display = 'none';
+                pdfView.style.display = 'block';
+                webViewBtn.classList.remove('active');
+                pdfViewBtn.classList.add('active');
+            }
+        }
+
+        // PDF viewer error handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfViewer = document.getElementById('resume-pdf-viewer');
+            
+            if (pdfViewer) {
+                pdfViewer.onerror = function() {
+                    alert('Your browser may not support PDF viewing. Please use the download button to view the resume.');
+                };
+            }
+        });
+    </script>
 </body>
 </html>

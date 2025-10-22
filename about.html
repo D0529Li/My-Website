@@ -23,9 +23,12 @@
                         <i class="fas fa-chevron-down nav-arrow"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="about.html#skills" class="dropdown-link">Skills</a>
-                        <a href="about.html#experience" class="dropdown-link">Experience</a>
+                        <a href="javascript:void(0)" onclick="switchView('pdf')" class="dropdown-link">Full Resume (PDF)</a>
+                        <a href="about.html#achievements" class="dropdown-link">Key Achievements</a>
+                        <a href="about.html#summary" class="dropdown-link">Professional Summary</a>
                         <a href="about.html#education" class="dropdown-link">Education</a>
+                        <a href="about.html#skills" class="dropdown-link">Skills & Technologies</a>
+                        <a href="about.html#experience" class="dropdown-link">Experience</a>
                     </div>
                 </div>
                 
@@ -88,7 +91,7 @@
 
         <!-- Web View Content -->
         <div id="webView" class="view-content">
-            <section class="resume-summary">
+            <section class="resume-summary" id="achievements">
                 <div class="container">
                     <h2>Key Achievements</h2>
                     <div class="achievements-grid">
@@ -109,12 +112,13 @@
                             <div class="achievement-text">Scrum Master & Code Mentor</div>
                         </div>
                         <div class="achievement-item">
-                            <div class="achievement-number">UW</div>
-                            <div class="achievement-text">Computer Science Graduate with Distinction</div>
+                            <div class="achievement-number"><i class="fas fa-rocket"></i></div>
+                            <div class="achievement-text">Full-Stack Architecture Design</div>
                         </div>
                     </div>
-                    <div class="resume-highlights">
-                        <h3>Professional Summary</h3>
+                    
+                    <div class="resume-highlights" id="summary">
+                        <h2>Professional Summary</h2>
                         <p>
                             <strong>Full Stack Software Engineer</strong> and <strong>Scrum Master</strong> with expertise in <strong>C#/.NET</strong> and <strong>Angular</strong>. 
                             Proven track record of delivering scalable <strong>desktop applications</strong>, <strong>web applications</strong>, 
@@ -123,60 +127,133 @@
                         </p>
                     </div>
                     
+                    <!-- Education Section -->
+                    <div class="education-section" id="education">
+                        <h2>Education</h2>
+                        <div class="education-card">
+                            <div class="education-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="University of Waterloo" class="university-logo">
+                            </div>
+                            <div class="education-content">
+                                <div class="education-header">
+                                    <h3>Bachelor of Computer Science (Honours)</h3>
+                                    <div class="education-period">Sep 2018 - Aug 2023</div>
+                                </div>
+                                <div class="education-institution">University of Waterloo - Co-operative Program</div>
+                                <div class="education-highlights">
+                                    <div class="highlight-item">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Graduated with Distinction</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-medal"></i>
+                                        <span>Top 25% in Canadian Computing Competition 2017</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Co-operative Program</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="skills" id="skills">
-                        <h3>Skills & Technologies</h3>
+                        <h2>Skills & Technologies</h2>
                         <div class="skills-grid">
                             <div class="skill-category">
                                 <h4>Core Technologies</h4>
                                 <div class="expertise-note">(3+ years professional experience)</div>
-                                <div class="skill-tags">
-                                    <span class="skill-tag expert">C#<small>(Expert)</small></span>
-                                    <span class="skill-tag expert">.NET Core<small>(Expert)</small></span>
-                                    <span class="skill-tag expert">WPF<small>(Expert)</small></span>
-                                    <span class="skill-tag proficient">Angular<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">JavaScript<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">ASP.NET Web API<small>(Proficient)</small></span>
-                                    <span class="skill-tag intermediate">C++<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Java<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">HTML/CSS<small>(Intermediate)</small></span>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header expert-header">Expert</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag expert">C#</span>
+                                        <span class="skill-tag expert">.NET Core</span>
+                                        <span class="skill-tag expert">WPF</span>
+                                    </div>
+                                </div>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header proficient-header">Proficient</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag proficient">Angular</span>
+                                        <span class="skill-tag proficient">JavaScript</span>
+                                        <span class="skill-tag proficient">ASP.NET Web API</span>
+                                    </div>
+                                </div>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header intermediate-header">Intermediate</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag intermediate">C++</span>
+                                        <span class="skill-tag intermediate">Java</span>
+                                        <span class="skill-tag intermediate">HTML/CSS</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="skill-category">
                                 <h4>Database Technologies</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag proficient">SQL<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">SQL Server<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">SQL Server Profiler<small>(Proficient)</small></span>
-                                    <span class="skill-tag intermediate">SSMS<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">SSAS<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Database Performance Optimization<small>(Intermediate)</small></span>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header proficient-header">Proficient</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag proficient">SQL</span>
+                                        <span class="skill-tag proficient">SQL Server</span>
+                                        <span class="skill-tag proficient">SQL Server Profiler</span>
+                                    </div>
+                                </div>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header intermediate-header">Intermediate</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag intermediate">SSMS</span>
+                                        <span class="skill-tag intermediate">SSAS</span>
+                                        <span class="skill-tag intermediate">Database Performance Optimization</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="skill-category">
                                 <h4>Development & Testing</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag expert">Visual Studio<small>(Expert)</small></span>
-                                    <span class="skill-tag proficient">Git<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">Microsoft Azure<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">Unit Testing<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">Integration Testing<small>(Proficient)</small></span>
-                                    <span class="skill-tag intermediate">Automated Testing<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Test-Driven Development<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Postman<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Jira<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Linux<small>(Intermediate)</small></span>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header expert-header">Expert</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag expert">Visual Studio</span>
+                                    </div>
+                                </div>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header proficient-header">Proficient</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag proficient">Git</span>
+                                        <span class="skill-tag proficient">Microsoft Azure</span>
+                                        <span class="skill-tag proficient">Unit Testing</span>
+                                        <span class="skill-tag proficient">Integration Testing</span>
+                                    </div>
+                                </div>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header intermediate-header">Intermediate</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag intermediate">Automated Testing</span>
+                                        <span class="skill-tag intermediate">Test-Driven Development</span>
+                                        <span class="skill-tag intermediate">Postman</span>
+                                        <span class="skill-tag intermediate">Jira</span>
+                                        <span class="skill-tag intermediate">Linux</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="skill-category">
                                 <h4>Leadership & Additional Technologies</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag proficient">Scrum Master<small>(Current Role)</small></span>
-                                    <span class="skill-tag proficient">Code Mentoring<small>(Proficient)</small></span>
-                                    <span class="skill-tag proficient">Cross-team Collaboration<small>(Proficient)</small></span>
-                                    <span class="skill-tag intermediate">Agile Development<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Performance Optimization<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Technical Documentation<small>(Intermediate)</small></span>
-                                    <span class="skill-tag intermediate">Appium Windows Driver<small>(Intermediate)</small></span>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header proficient-header">Proficient</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag proficient">Scrum Master</span>
+                                        <span class="skill-tag proficient">Code Mentoring</span>
+                                        <span class="skill-tag proficient">Cross-team Collaboration</span>
+                                    </div>
+                                </div>
+                                <div class="skill-level-group">
+                                    <h5 class="skill-level-header intermediate-header">Intermediate</h5>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag intermediate">Agile Development</span>
+                                        <span class="skill-tag intermediate">Performance Optimization</span>
+                                        <span class="skill-tag intermediate">Technical Documentation</span>
+                                        <span class="skill-tag intermediate">Appium Windows Driver</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -190,24 +267,25 @@
                 <h2>Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">Oct 2023 - Present</div>
+                        <div class="timeline-date">Sep 2022 - Apr 2023<br>Oct 2023 - Present</div>
                         <div class="timeline-content">
-                            <h3>Full Stack Software Engineer</h3>
+                            <h3>Full Stack Software Engineer <span class="role-progression">(Intern → Full-Time)</span></h3>
                             <h4>PINpoint Information Systems Inc., Burlington, ON</h4>
-                            <p>Leading full-stack development initiatives with focus on performance optimization and user experience. 
-                            Key achievements include boosting database performance by 10×, mentoring multiple developers, and 
-                            designing automated tools that streamline development workflows. Specialized in C#/WPF, Angular, 
-                            and database optimization.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Sep 2022 - Apr 2023</div>
-                        <div class="timeline-content">
-                            <h3>Full Stack Software Engineer (Intern)</h3>
-                            <h4>PINpoint Information Systems Inc., Burlington, ON</h4>
-                            <p>Developed robust software solutions as an intern, contributing to database tools, automated testing, 
-                            and front-end optimization. Successfully delivered a Visual Studio custom build task and 
-                            parallelized automated test codebase, cutting execution time by 90%.</p>
+                            <div class="experience-achievements">
+                                <ul>
+                                    <li>Optimized service and testing performance: enhanced multithreading in the <strong>Database Activity Replay tool</strong> to boost performance by over <strong>10×</strong>, parallelized automated tests cutting runtime by <strong>90%</strong>, and refactored database operations to async calls.</li>
+                                    
+                                    <li>Developed and deployed a <strong>Visual Studio</strong> custom build task that automates model generation across service and front-end tiers, streamlining workflows.</li>
+                                    
+                                    <li>Refactored and optimized <strong>SQL stored procedures</strong> to eliminate cartesian explosion issues and improve query efficiency, significantly enhancing overall system responsiveness.</li>
+                                    
+                                    <li>Served as <strong>Scrum Master</strong>, facilitating daily standups, sprint planning, and retrospectives, improving collaboration and delivery cadence.</li>
+                                    
+                                    <li>Enhanced UI/UX by designing a feedback interface (<strong>C#/WPF</strong>) and refactoring front-end components into reusable modules (<strong>Angular/HTML/JavaScript</strong>), reducing development time and improving maintainability.</li>
+                                    
+                                    <li>Mentored and onboarded multiple <strong>Co-op students</strong> and a full-time developer, accelerating their technical growth and team integration.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -215,31 +293,25 @@
                         <div class="timeline-content">
                             <h3>Software Engineer (Intern)</h3>
                             <h4>JSI Telecom, Kanata, ON</h4>
-                            <p>Collaborated with UI/UX teams in Agile sprints to improve user interfaces for telecom products. 
-                            Participated in cross-team discussions ensuring cohesive product development.</p>
+                            <div class="experience-achievements">
+                                <ul>
+                                    <li>Collaborated with <strong>UI/UX teams</strong> in Agile sprints to improve user interfaces for telecom products, enhancing user experience and interface responsiveness.</li>
+                                    
+                                    <li>Participated in <strong>cross-team discussions</strong> and requirements gathering sessions, ensuring cohesive product development and alignment across departments.</li>
+                                    
+                                    <li>Contributed to <strong>front-end development</strong> initiatives, working on telecom interface improvements and user interaction workflows.</li>
+                                    
+                                    <li>Gained experience in <strong>Agile development methodologies</strong>, participating in sprint planning, daily standups, and retrospective meetings.</li>
+                                    
+                                    <li>Supported <strong>product development lifecycle</strong> processes, from initial design concepts through implementation and testing phases.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="experience" id="education">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">Sep 2018 - Aug 2023</div>
-                        <div class="timeline-content">
-                            <h3>Bachelor of Computer Science (Honours)</h3>
-                            <h4>University of Waterloo - Co-operative Program</h4>
-                            <p>Graduated with Distinction from the prestigious Co-operative Program. 
-                            Notable achievement: Top 25% in Canadian Computing Competition 2017 (Senior Division). 
-                            Gained hands-on industry experience through multiple co-op terms.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         </div>
 
         <!-- PDF View Content -->

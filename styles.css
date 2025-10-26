@@ -125,7 +125,7 @@ main {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -143,17 +143,32 @@ main {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 50px;
+    position: relative;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 20px;
+}
+
+.nav-container .social-links {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    z-index: 1001;
 }
 
 .nav-logo a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent-primary);
     text-decoration: none;
@@ -208,13 +223,6 @@ main {
 }
 
 /* Social Links in Navigation */
-.nav-container .social-links {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-    margin-left: 2rem;
-    z-index: 1001; /* Ensure social links are above other elements */
-}
 
 .nav-container .social-link {
     width: 32px;
@@ -241,7 +249,7 @@ main {
 
 /* Hero Section */
 .hero {
-    padding: 100px 0 60px;
+    padding: 70px 0 40px;
     background: linear-gradient(
         135deg,
         var(--bg-primary) 0%,
@@ -251,7 +259,7 @@ main {
 }
 
 .hero-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -267,9 +275,9 @@ main {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     line-height: 1.2;
     white-space: nowrap;
     text-align: center;
@@ -282,19 +290,19 @@ main {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     font-weight: 500;
 }
 
 .hero-subtitle-highlighted {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: white;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     font-weight: 600;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 25px;
     display: inline-block;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
@@ -302,9 +310,9 @@ main {
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.7;
 }
 
@@ -361,13 +369,13 @@ main {
 }
 
 .hero-image .profile-photo {
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 10px 30px var(--shadow-medium);
+    box-shadow: 0 8px 24px var(--shadow-medium);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 4px solid var(--accent-primary);
+    border: 3px solid var(--accent-primary);
 }
 
 .hero-image .profile-photo:hover {
@@ -453,22 +461,22 @@ main {
 
 /* Quick Navigation Section */
 .quick-nav {
-    padding: 20px 0 40px;
+    padding: 15px 0 30px;
     background: var(--bg-primary);
     transition: background-color 0.3s ease;
 }
 
 .quick-nav-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .quick-nav-card {
     background: var(--card-bg);
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.2rem;
     border-radius: 12px;
     text-align: center;
     text-decoration: none;
@@ -486,15 +494,15 @@ main {
 }
 
 .quick-nav-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.8rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
@@ -522,8 +530,8 @@ main {
 }
 
 .quick-nav-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
     color: var(--text-primary);
     font-weight: 600;
     position: relative;
@@ -547,7 +555,7 @@ main {
 
 /* Page Header */
 .page-header {
-    padding: 85px 0 55px;
+    padding: 65px 0 40px;
     text-align: center;
     background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     color: white;
@@ -556,13 +564,13 @@ main {
 
 
 .page-header h1 {
-    font-size: 3rem;
+    font-size: 2.4rem;
     margin-bottom: 5px;
     font-weight: 700;
 }
 
 .page-header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
 }
 
@@ -678,7 +686,7 @@ main {
 
 /* About Page Styles */
 .about-content {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .about-grid {
@@ -689,15 +697,15 @@ main {
 }
 
 .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     line-height: 1.7;
 }
 
@@ -731,15 +739,15 @@ main {
 
 /* Skills Section */
 .skills {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--bg-secondary);
     transition: background-color 0.3s ease;
 }
 
 .skills h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
     color: var(--text-primary);
 }
 
@@ -769,7 +777,7 @@ main {
 
 .skill-category {
     background: var(--card-bg);
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--shadow-light);
     transition: all 0.3s ease;
@@ -809,8 +817,8 @@ main {
 }
 
 .skill-category h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
     color: var(--text-primary);
     font-weight: 600;
     display: flex;
@@ -1024,7 +1032,7 @@ main {
     right: 0;
     width: 100px;
     height: 100px;
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(var(--accent-primary-rgb), 0.1);
     border-radius: 50%;
     transform: translate(30px, -30px);
 }
@@ -1190,6 +1198,7 @@ main {
     font-size: 1.15rem;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 .resume-highlights p::before {
@@ -1197,11 +1206,11 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background: rgba(var(--accent-primary-rgb), 0.1);
     border-radius: 50%;
-    transform: translate(25px, -25px);
+    transform: translate(30px, -30px);
 }
 
 .resume-highlights p:hover {
@@ -1247,13 +1256,13 @@ main {
 
 /* Experience Section */
 .experience {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .experience h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
     color: var(--text-primary);
 }
 
@@ -1296,7 +1305,7 @@ main {
 .timeline-content {
     flex: 1;
     background: var(--card-bg);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px var(--shadow-light);
     margin: 0 0.5rem;
@@ -1306,8 +1315,8 @@ main {
 }
 
 .timeline-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
     color: var(--text-primary);
 }
 
@@ -1323,12 +1332,12 @@ main {
 
 /* Hobbies Page Styles */
 .hobbies-content {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .hobby-card {
     background: var(--card-bg);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
     position: relative;
@@ -1341,21 +1350,21 @@ main {
 }
 
 .hobby-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .hobby-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
     color: var(--text-primary);
 }
 
@@ -1508,7 +1517,7 @@ main {
 
 /* Accordion Styles for Hobbies */
 .hobbies-accordion {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .accordion-item {
@@ -1528,7 +1537,7 @@ main {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-bottom: none;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 1.5rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -1720,13 +1729,13 @@ main {
 
 /* Projects Page Styles */
 .projects-content {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
 }
 
 .project-card {
@@ -1744,7 +1753,7 @@ main {
 
 .project-image {
     position: relative;
-    height: 350px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -1797,19 +1806,19 @@ main {
 }
 
 .project-info {
-    padding: 1.5rem;
+    padding: 1.2rem;
 }
 
 .project-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
     color: var(--text-primary);
 }
 
 .project-info p {
     color: var(--text-secondary);
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .project-tech {
@@ -1883,6 +1892,18 @@ main {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+    
+    .nav-logo {
+        position: static;
+    }
+    
+    .nav-container .social-links {
+        position: static;
+    }
+    
     .hamburger {
         display: flex;
     }

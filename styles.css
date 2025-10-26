@@ -125,7 +125,7 @@ main {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -136,20 +136,22 @@ main {
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
     transition: background-color 0.3s ease;
+    height: 80px;
 }
 
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    height: 80px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 50px;
+    justify-content: center;
     position: relative;
 }
 
@@ -168,7 +170,7 @@ main {
 }
 
 .nav-logo a {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent-primary);
     text-decoration: none;
@@ -185,6 +187,7 @@ main {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
     position: relative;
 }
@@ -225,8 +228,8 @@ main {
 /* Social Links in Navigation */
 
 .nav-container .social-link {
-    width: 32px;
-    height: 32px;
+    width: 38px;
+    height: 38px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
@@ -235,7 +238,7 @@ main {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     position: relative;
     z-index: 1002;
     pointer-events: auto; /* Ensure links are clickable */
@@ -249,7 +252,7 @@ main {
 
 /* Hero Section */
 .hero {
-    padding: 70px 0 40px;
+    padding: 90px 0 10px;
     background: linear-gradient(
         135deg,
         var(--bg-primary) 0%,
@@ -387,10 +390,13 @@ main {
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
-    text-align: left;
-    max-width: 800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 0.8rem 3rem;
 }
 
 .hero-highlights li {
@@ -400,6 +406,7 @@ main {
     font-size: 1.1rem;
     line-height: 1.6;
     transition: color 0.3s ease;
+    text-align: left;
 }
 
 .hero-highlights li i {
@@ -461,7 +468,7 @@ main {
 
 /* Quick Navigation Section */
 .quick-nav {
-    padding: 15px 0 30px;
+    padding: 30px 0 30px;
     background: var(--bg-primary);
     transition: background-color 0.3s ease;
 }
@@ -555,7 +562,7 @@ main {
 
 /* Page Header */
 .page-header {
-    padding: 65px 0 40px;
+    padding: 100px 0 40px;
     text-align: center;
     background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     color: white;
@@ -739,9 +746,13 @@ main {
 
 /* Skills Section */
 .skills {
-    padding: 60px 0;
+    padding: 45px 0;
     background: var(--bg-secondary);
     transition: background-color 0.3s ease;
+}
+
+.skills .container {
+    max-width: 1400px;
 }
 
 .skills h2 {
@@ -753,12 +764,13 @@ main {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(360px, 1fr));
+    gap: 5rem;
     margin-bottom: 1.5rem;
+    justify-content: center;
 }
 
-/* 2x2 grid layout for technology categories with skill level sub-grouping */
+/* 1x4 grid layout for technology categories with skill level sub-grouping */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -768,16 +780,16 @@ main {
     }
 }
 
-@media (max-width: 992px) and (min-width: 769px) {
+@media (max-width: 1200px) and (min-width: 769px) {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 1.5rem;
     }
 }
 
 .skill-category {
     background: var(--card-bg);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--shadow-light);
     transition: all 0.3s ease;
@@ -950,7 +962,6 @@ main {
 
 /* Resume Summary Section */
 .resume-summary {
-    padding: 4rem 0;
     background: var(--bg-secondary);
 }
 
@@ -1256,7 +1267,7 @@ main {
 
 /* Experience Section */
 .experience {
-    padding: 5px 0;
+    padding: 2rem 0;
 }
 
 .experience h2 {
@@ -1734,8 +1745,11 @@ main {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3rem 10rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -1810,9 +1824,13 @@ main {
 }
 
 .project-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-    color: var(--text-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-primary);
 }
 
 .project-info p {
@@ -1825,6 +1843,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .tech-tag {
@@ -1955,6 +1975,8 @@ main {
     .hero-highlights {
         max-width: 100%;
         text-align: left;
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
     }
 
     .hero-highlights li {
@@ -2057,6 +2079,8 @@ main {
 
     .projects-grid {
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        max-width: 100%;
     }
 
     .quick-nav {
@@ -2106,7 +2130,7 @@ main {
 }
 
 .nav-arrow {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     transition: transform 0.3s ease;
     color: var(--text-secondary);
     margin-left: 5px;

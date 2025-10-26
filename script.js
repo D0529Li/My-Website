@@ -313,7 +313,7 @@ function toggleMedia(mediaId) {
     if (mediaContent.style.display === 'none' || mediaContent.style.display === '') {
         mediaContent.style.display = 'block';
         arrow.style.transform = 'rotate(180deg)';
-        span.textContent = 'Hide Images';
+        span.textContent = 'Hide Gaming Images';
         
         // Add smooth reveal animation
         mediaContent.style.opacity = '0';
